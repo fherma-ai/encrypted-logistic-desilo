@@ -4,12 +4,11 @@
 
 The series is a Chebyshev projection of the logistic function itself, computed
 in `init` from the function rather than carried as a table of numbers: degree
-59, which is the degree the challenge-winning entry uses, and which reaches
-3.4e-4 on this specification's domain — inside the bar with room for the
-scheme's noise. This is the one place these three DESILO answers differ from
-the OpenFHE ones beside them: the published component spells its series out by
-hand, with the high-degree terms unrolled, and the polynomial here is the
-plain projection at the same degree rather than that fit.
+77, which is the degree the challenge-winning entry carries its odd terms up
+to, and which reaches 3.6e-5 on this specification's domain — the reference's
+own accuracy, against a bar of 1e-4. The published component spells the same series out by hand, with its
+high-degree terms unrolled; the projection here is the same polynomial written
+the short way, and it lands on the same accuracy.
 
 The Chebyshev basis is on [-1, 1] and the data is on [-25, 25], so the first
 operation of the circuit is the scaling, which costs one level.
@@ -18,7 +17,7 @@ import numpy as np
 
 from fherma import Inputs, Outputs, Point
 
-DEGREE = 59
+DEGREE = 77
 BOUND = 25.0
 #: Chebyshev nodes for the projection — far more than the degree needs.
 NODES = 8192

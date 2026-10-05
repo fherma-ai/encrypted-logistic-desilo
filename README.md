@@ -11,7 +11,7 @@ kernel logistic<N: u32>(
 
 `1 / (1 + e^-x)` over [-25, 25], held within 1e-3 everywhere.
 
-## The polynomial here is ours
+## The polynomial is the reference's, written the short way
 
 This is the one place these three DESILO answers differ from the OpenFHE ones
 beside them, and the board should be read with that in mind.
@@ -21,8 +21,8 @@ The published LogisticFunction component of
 over [-25, 25] whose high-degree terms are unrolled by hand in several groups
 of different shape. Reproducing that circuit term by term is work out of
 proportion to what it would buy, so `init` computes a plain Chebyshev
-projection of the logistic function instead, at degree 59 — the degree the
-published component uses.
+projection of the logistic function instead, at degree 77 — the degree the
+published component carries its odd terms up to.
 
 The coefficients are therefore computed from the function rather than carried
 as a table, and no number in this repository is a fit.
@@ -37,9 +37,9 @@ default of four, for the same reason.
 
 ## Accuracy
 
-The projection reaches 3.4e-4 on the specification's domain, inside the 1e-3
-bar by a factor of three, and the measured answer reaches the same: the scheme's
-noise is below the polynomial's own error here.
+The projection reaches 3.6e-5 on the specification's domain — the accuracy the
+reference itself reaches, against a bar of 1e-4 — and the measured answer
+reaches the same: the scheme's noise is below the polynomial's own error here.
 
 The Chebyshev basis is on [-1, 1] and the data is on [-25, 25], so the first
 operation of the circuit is the scaling, which costs one level. The level

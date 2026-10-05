@@ -45,7 +45,7 @@
   //             "log_slot_count" when fewer slots than the ring are wanted;
   //   plain   — none of them, and the library picks a default sized for
   //             bootstrapping if "use_bootstrap" is true.
-  "max_level": 8,
+  "max_level": 9,
   "slot_count": 16384,
   "log_coeff_count": null,
   "special_prime_count": null,
