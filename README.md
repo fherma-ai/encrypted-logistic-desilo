@@ -27,6 +27,14 @@ published component uses.
 The coefficients are therefore computed from the function rather than carried
 as a table, and no number in this repository is a fit.
 
+## The engine takes the machine
+
+`mode` is `parallel`, not `cpu`. They are different engines, not two speeds of
+one: `cpu` computes in a single thread, and a number measured there is a number
+about one core, which is not what the answers beside this one are measured at.
+The thread count is the cores the runner reports rather than the library's own
+default of four, for the same reason.
+
 ## Accuracy
 
 The projection reaches 3.4e-4 on the specification's domain, inside the 1e-3
