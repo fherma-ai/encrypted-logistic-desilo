@@ -55,6 +55,7 @@ A point directory is what the specification's testing bundle writes with
 solution/
   solve.py       the four functions — the only file written by hand
   config.jsonc   the engine: scheme, mode, level budget, which keys
+solution-gpu/    the same four functions, with the engine on a card
   fherma.toml    what it implements, and with what
   envelope.py    generated — engine, keys, encryption. Holds the secret key
   main.py        generated — the measured loop
